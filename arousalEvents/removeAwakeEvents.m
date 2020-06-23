@@ -37,8 +37,8 @@ function [validEvents, falseEvents] = removeAwakeEvents(events, hypnogram)
         from = events(i).start;
         to = from + events(i).duration;
         
-        fromEpoch = min(length(hypnogram), floor(from / 30) + 1);
-        toEpoch = min(length(hypnogram), floor(to / 30) + 1);
+        fromEpoch = min(length(hypnogram), floor(from / 20) + 1);
+        toEpoch = min(length(hypnogram), floor(to / 20) + 1);
         
         awakeFrom = hypnogram(fromEpoch) == 0;
         awakeTo = hypnogram(toEpoch) == 0;

@@ -148,9 +148,9 @@ function [validEvents, falseEvents] = removeCheckREMeventsByHypnogram(events, em
     remove = false(1, length(events));
     
     for i = 1:length(events)
-        from = events(i).start;
+        from = out.AR.start;%events(i).start;
         
-        to = from + events(i).duration;
+        to = from %from + events(i).duration;
                        
         fromEpoch = min(length(hypnogram), floor(from / 20) + 1);
         toEpoch = min(length(hypnogram), floor(to / 20) + 1);

@@ -51,7 +51,7 @@ function [arousals, removedArousals, spindles, eeg, emg] = arousalDetection(eeg,
     
     if nargin < 3
         logger.info('Performance can improve using an expert hypnogram');
-        hypnogram = ones(ceil(length(eeg.raw) / eeg.rate / 30), 1);
+        hypnogram = ones(ceil(length(eeg.raw) / eeg.rate / 20), 1);% changed to20 becasue of scoring
     end
 
     logger.info('Finding power events in EEG');
